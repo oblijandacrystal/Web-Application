@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Researcher</title>
+</head>
+<body>
+    <header>
+        <h1>Book Researcher</h1>
+    <nav>
+        <ul>
+            <li> <a href="#search">Search</a></li>
+            <li> <a href="#readinglist">Reading List</a></li>
+            <li> <a href="#citations">Citations</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <h2>Find books for your research</h2>
+        <p>Search by title, author, or keyword.</p>
+    </main>
+
+    <form id="search-form">
+        <select name="name" id="search-type">
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="keyword">Keyword</option>   
+        </select>
+        <input type="search" id="search-input" name="query" placeholder="Search Books..." aria-label="Search books" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <aside id="readinglist">
+        <h2>Reading List</h2>
+    </aside>
+
+    <footer>
+        <p>Data from Open Library and Google Books</p>
+        &copy; 2026 CDK Innovators. All Rights Reserved 
+    </footer>
+</body>
+</html>
