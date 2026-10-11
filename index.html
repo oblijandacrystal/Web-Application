@@ -11,10 +11,32 @@
                 box-sizing: border-box;
             }
 
+            html {
+                scroll-behavior: smooth;
+            }
+
             body {
                 margin: 0;
                 overflow-x: hidden;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(152, 177, 137);
+                color: rgb(53, 35, 23);
+                font-size: 1.375rem;
+
+                min-height: 100vh;
+                min-height: 100dvh;
+                display: flex;
+                flex-direction: column;
             }
+
+            img {
+                max-width: 100%;
+            }
+
+            .center {
+                text-align: center;
+            }
+
             .navbar {
                 display: flex;
                 justify-content: space-between;
@@ -48,17 +70,11 @@
                 text-decoration: underline;
             }
 
-            body {
-                font-family: Arial, Sans-serif;
-                background-color: rgb(152, 177, 137); 
-                color: rgb(53, 35, 23);
-                font-size: 1.375rem;
-            }
-
             main {
                 width: 90%;
                 max-width: 3000px;
                 margin: 2.5rem auto;
+                flex: 1;
             }
 
            
@@ -73,8 +89,17 @@
                 box-shadow: 0 4px 10px rgba(104, 74, 40, 0.3);
             }
 
-            section:hover {
-                transform: translateY(-5px);
+            main section{
+                display: none;
+            }
+
+            main section.visible {
+                display: block;
+            }
+
+            .nav-links a.active {
+                color: rgb(180, 205, 110);
+                text-decoration: underline;
             }
 
             h1, h2, h3 {
@@ -136,7 +161,7 @@
                 margin-top: 1.875rem;
             }
 
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
 
                 .navbar {
                     flex-direction: column;
@@ -184,7 +209,7 @@
 
                 #team tr {
                     display: grid;
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    grid-template-columns: 1fr;
                     gap: 0.75rem;
                 }
 
@@ -245,7 +270,7 @@
             </section>
 
             <section id="project">
-                <h2 align="center">Our Project: Book Reseacher App</h2>
+                <h2 align="center">Our Project: Book Researcher App</h2>
 
                 <p>The <b>Book Researcher</b> is a search tool built for academics. A user types a <b>title</b>, <b>author</b>, or <b>keyword</b> and gets back a list of matching books. Each result shows:</p>
 
@@ -258,7 +283,7 @@
                 <article>
                     <h3>Main Goal</h3>
 
-                    <p2>Its main purpose is to help academics quickly find the relevant books without getting unrelated results. It helps then explore a topic, find a specific book, and identify the write about the subject.</p2>
+                    <p>Its main purpose is to help academics quickly find the relevant books without getting unrelated results. It helps then explore a topic, find a specific book, and identify the write about the subject.</p>
                 </article>
             </section>
 
@@ -266,33 +291,28 @@
                 <h2 align="center">Our Team Members</h2>
                 <p align="center"><b>CDK Innovators</b></p>
 
-                <table border="1" width="100%">
+                <table>
                     <tr>
                         <td>
                             <img src="daisy.jpg" alt="HTML Developer" width="200">
-                        </td>
-                        <td>
                             <h2>Daisy Mae S. Lozano</h2>
                             <p>HTML DEVELOPER</p>
                         </td>
 
                         <td>
                             <img src="keisha.jpg" alt="CSS Developer" width="200">
-                        </td>
-                        <td>
                             <h2>Keisha Monique F. Castrodes</h2>
                             <p>CSS DEVELOPER</p>
                         </td>
 
                         <td>
                             <img src="crystal.jpg" alt="JS Developer" width="200">
-                        </td>
-                        <td>
                             <h2>Crystal Carryle A. Oblijanda</h2>
                             <p>JavaScript & API Developer</p>
                         </td>
                     </tr>
                 </table>
+
             </section>
         </main>
 
@@ -300,5 +320,41 @@
             &copy; 2026 CDK Innovators. All Rights Reserved
         </footer>
         
+<script>
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const logo = document.querySelector(".logo");
+    const sections = document.querySelectorAll("main section");
+
+    function showSection(id) {
+        const exists = document.getElementById(id);
+        if (!exists) id = "home";
+
+        sections.forEach((section) => {
+            section.classList.toggle("visible", section.id === id);
+            });
+
+        navLinks.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+            });
+
+    history.replaceState(null, "", "#" + id);
+    window.scrollTo({ top: 0, behavior: "smooth"});
+    }
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            showSection(link.getAttribute("href").slice(1));
+        });
+    });
+
+    logo.addEventListener("click", (event) => {
+        event.preventDefault();
+        showSection("home");
+    });
+
+    showSection(location.hash.slice(1) || "home");
+
+        </script>
     </body>
 </html>
