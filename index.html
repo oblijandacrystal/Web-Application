@@ -1,64 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDK Innovators</title>
-</head>
-<body>
-    <h1 align = "center"> CDK INNOVATORS</h1>
-        <p>We are the CDK Innovators. As a team, we aim to turn innovative ideas into solutions that make things simpler, faster, and more convenient for our users.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CDK Innovators</title>
 
-    <section>
-        <h2>Our Project: Book Reseacher App</h2>
-            <p>The <b>Book Researcher</b> is a search tool built for academics. A user types a <b>title</b>, <b>author</b>, or <b>keyword</b> and gets back a list of matching books. Each result shows:</p>
 
-            <ul>
-                <li>a <b>cover image</b>, for quick visual recognition of edition</li>
-                <li>the <b>author(s)</b>, which establishes who behind the work</li>
-                <li>the <b>publication year</b>, which shows whether a book is recent or older</li>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
 
-            </ul>
+            body {
+                margin: 0;
+                overflow-x: hidden;
+            }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.125rem 5%;
+                background-color: rgb(37, 34, 36);
+                color: rgb(232, 223, 200);
+            }
 
-        <h3>Main Goal</h3>
-            <p>Its main purpose is to help academics quickly find the relevant books without getting unrelated results. It helps then explore a topic, find a specific book, and identify the write about the subject.</p>
-    </section>
+            .logo {
+                color: rgb(232, 223, 200);
+                font-size: 1.375rem;
+                font-weight: bold;
+                text-decoration: none;
+            }
 
-    <article>
-        <h2 align="center">Our Team Members</h2>
-        <p align="center"><b>CDK Innovators</b></p>
-        <table border = "1", width = "100%">
-            <td>
-                <img src="daisy.jpg" alt="HTML Developer" width="200">
-            </td>
+            .nav-links {
+                display: flex;
+                gap: 1.875rem;
+            }
 
-            <td>
-                <h2>Daisy Mae Lozano</h2>
-                <p>HTML DEVELOPER<p>
-            </td>
+            .nav-links a {
+                color: rgb(232, 223, 200);
+                text-decoration: none;
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
 
-            <td>
-                <img src="keisha.jpg" alt="CSS Developer" width="200">
-            </td>
+            .nav-links a:hover {
+                color: rgb(92, 115, 35);
+                text-decoration: underline;
+            }
 
-            <td>
-                <h2>Keisha Monique Castrodes</h2>
-                <p>CSS DEVELOPER<p>
-            </td>
+            body {
+                font-family: Arial, Sans-serif;
+                background-color: rgb(152, 177, 137);  /*background color*/
+                color: rgb(53, 35, 23) /*text color*/
+                font-size: 1.375rem;
+            }
 
-            <td>
-                <img src="crystal.jpg" alt="JS Developer" width="200">
-            </td>
+            main {
+                width: 90%;
+                max-width: 3000px;
+                margin: 2.5rem auto;
+            }
 
-            <td>
-                <h2>Crystal Carryle A. Oblijanda</h2>
-                <p>JavaScript & API Developer</p>
-            </td>
-        </table>
+           
+
+            section, article {
+                background-color: rgb(199, 174, 139);
+                
+                border: 0.1875rem solid rgb(112, 79, 65);
+                border-radius: 0.5rem;
+                margin: 1.25rem;
+                padding: 1.25rem;
+                box-shadow: 0 4px 10px rgba(104, 74, 40, 0.3);
+            }
+
+            section:hover {
+                transform: translateY(-5px);
+            }
+
+            h1, h2, h3 {
+                color:rgb(17, 47, 31);
+            }
+
+            li {
+                margin-bottom: 0.5rem;
+            }
+
+            #team table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0.9375rem;
+                table-layout: fixed;
+                border: none;
+            }
+
+            #team td {
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(176, 141, 87);
+                border-radius: 0.625rem;
+                padding: 0.75rem;
+                text-align: center;
+                vertical-align: middle;
+                overflow-wrap: break-word;
+                transition: 0.3s;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            #team td:hover {
+                transform: translateY(-5px);
+            }
+
+
+            #team td img {
+                width: 100%;
+                max-width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 0.5rem;
+            }
+
+            #team td h2 {
+                font-size: 16px;
+                margin: 10px 0;
+            }
+
+            #team td p {
+                font-size: 13px;
+                margin: 5px 0;
+            }
+
+            footer {
+                background-color:  rgb(79, 61, 66);
+                color: rgb(255, 255, 255);
+                text-align: center;
+                padding: 0.5rem 1.125rem;
+                margin-top: 1.875rem;
+            }
+
+            @media (max-width: 600px) {
+
+                .navbar {
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding: 1rem;
+                }
+
+                .logo {
+                    font-size: 1.25rem;
+                    text-align: center;
+                }
+
+                .nav-links {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+
+                .nav-links a {
+                    font-size: 0.875rem;
+                }
+                    
+                main {
+                    width: auto;
+                    margin: 1rem;
+                }
+
+                section,
+                article {
+                    margin: 0 0 1rem;
+                    padding: 1rem;
+                    box-sizing: border-box;
+                }
+
+                #team table,
+                #team tbody,
+                #team tr {
+                    display: block;
+                    width: 100%;
+                }
+
+                #team table {
+                    border-spacing: 0;
+                }
+
+                #team tr {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 0.75rem;
+                }
+
+                #team td {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 0;
+                    padding: 0.75rem 0.5rem;
+                    overflow-wrap: anywhere;
+                }
+
+                #team td img {
+                    width: 100%;
+                    max-width: 6rem;
+                    height: auto;
+                    aspect-ratio: 1 / 1;
+                    object-fit: cover;
+                }
+
+                #team td h2 {
+                    font-size: 0.875rem;
+                    line-height: 1.3;
+                    overflow-wrap: anywhere;
+                }
+
+                #team td p {
+                    font-size: 0.75rem;
+                    line-height: 1.4;
+                    overflow-wrap: anywhere;
+                }
+            }
             
-    </article>
+        </style>
+    </head>
 
-    <footer>&copy; 2026 CDK Innovators. All Rights Reserved</footer>
+
+    <body>
+        <header class="navbar"> <!--KEI-->
+            <a href="#home" class="logo">
+                CDK INNOVATORS
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#home" class="active">Home</a>
+                <a href="#project">Our Project</a>
+                <a href="#team">Our Team</a>
+            </nav>
+        </header> <!--KEI-->
+
     
-</body>
+        <main> <!--KEI-->
+            <section id="home"> <!--KEI-->
+                <h1 align="center">CDK INNOVATORS</h1>
+
+                <p align="center">We are the CDK Innovators. As a team, we aim to turn innovative ideas into solutions that make things simpler, faster, and more convenient for our users.</p>
+            </section>
+
+            <section id="project"> <!--KEI-->
+                <h2 align="center">Our Project: Book Reseacher App</h2>
+
+                <p>The <b>Book Researcher</b> is a search tool built for academics. A user types a <b>title</b>, <b>author</b>, or <b>keyword</b> and gets back a list of matching books. Each result shows:</p>
+
+                <ul>
+                    <li>a <b>cover image</b>, for quick visual recognition of edition</li>
+                    <li>the <b>author(s)</b>, which establishes who behind the work</li>
+                    <li>the <b>publication year</b>, which shows whether a book is recent or older</li>
+                </ul>
+
+                <article>
+                    <h3>Main Goal</h3>
+
+                    <p2>Its main purpose is to help academics quickly find the relevant books without getting unrelated results. It helps then explore a topic, find a specific book, and identify the write about the subject.</p2>
+                </article>
+            </section>
+
+            <section id="team"> <!--KEI-->
+                <h2 align="center">Our Team Members</h2>
+                <p align="center"><b>CDK Innovators</b></p>
+
+                <table border="1" width="100%">
+                    <tr>
+                        <td>
+                            <img src="daisy.jpg" alt="HTML Developer" width="200">
+                        </td>
+                        <td>
+                            <h2>Daisy Mae S. Lozano</h2>
+                            <p>HTML DEVELOPER</p>
+                        </td>
+
+                        <td>
+                            <img src="keisha.jpg" alt="CSS Developer" width="200">
+                        </td>
+                        <td>
+                            <h2>Keisha Monique F. Castrodes</h2>
+                            <p>CSS DEVELOPER</p>
+                        </td>
+
+                        <td>
+                            <img src="crystal.jpg" alt="JS Developer" width="200">
+                        </td>
+                        <td>
+                            <h2>Crystal Carryle A. Oblijanda</h2>
+                            <p>JavaScript & API Developer</p>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </main> <!--KEI-->
+
+        <footer>
+            &copy; 2026 CDK Innovators. All Rights Reserved
+        </footer>
+        
+    </body>
 </html>
