@@ -1,44 +1,125 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Book Researcher</title>
 </head>
 <body>
-    <header>
-        <h1>Book Researcher</h1>
-    <nav>
-        <ul>
-            <li> <a href="#search">Search</a></li>
-            <li> <a href="#readinglist">Reading List</a></li>
-            <li> <a href="#citations">Citations</a></li>
-        </ul>
-    </nav>
+
+    <header id="home">
+        <a href="#home" class="logo">
+            BOOK RESEARCHER
+            <small>Your Academic Library</small>
+        </a>
     </header>
 
-    <main>
-        <h2>Find books for your research</h2>
-        <p>Search by title, author, or keyword.</p>
-    </main>
-
-    <form id="search-form">
-        <select name="name" id="search-type">
-            <option value="title">Title</option>
-            <option value="author">Author</option>
-            <option value="keyword">Keyword</option>   
-        </select>
-        <input type="search" id="search-input" name="query" placeholder="Search Books..." aria-label="Search books" required>
-        <button type="submit">Search</button>
-    </form>
-
-    <aside id="readinglist">
-        <h2>Reading List</h2>
+    <aside>
+        <nav>
+            <a href="#search" class="active">Search</a>
+            <a href="#readinglist">Reading List</a>
+            <a href="#recently-viewed">Recently Viewed</a>
+            <a href="#citations">Citations</a>
+        </nav>
     </aside>
+
+    <main>
+
+        <section id="search">
+            <h1>Find books for your research</h1>
+            <p>Search by title, author, or keyword.</p>
+
+            <form id="search-form">
+                <select name="name" id="search-type" aria-label="Search by">
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="keyword">Keyword</option>
+                </select>
+
+                <input
+                    type="search"
+                    id="search-input"
+                    name="query"
+                    placeholder="Search books..."
+                    aria-label="Search books"
+                    required
+                >
+
+                <button type="submit">Search</button>
+            </form>
+
+            <section id="search-results">
+                <h2>Search Results</h2>
+                <p>Search for a book to see the results here.</p>
+            </section>
+        </section>
+
+        <section id="recently-viewed">
+            <h2>Recently Viewed</h2>
+            <p>Books you have opened recently.</p>
+
+            <section class="recent-books">
+                <article class="book-card">
+                    <img alt="Book cover">
+                    <h3>Book Title 1</h3>
+                </article>
+
+                <article class="book-card">
+                    <img alt="Book cover">
+                    <h3>Book Title 2</h3>
+                </article>
+
+                <article class="book-card">
+                    <img alt="Book cover">
+                    <h3>Book Title 3</h3>
+                </article>
+            </section>
+
+            <a href="#recently-viewed">See More...</a>
+        </section>
+
+        <section id="readinglist">
+            <h2>Reading List</h2>
+            <p>Your saved books for future reference.</p>
+
+            <article class="saved-book">
+                <img alt="Book cover">
+
+                <section class="book-info">
+                    <h3>Book Title 1</h3>
+                    <p>Author Name</p>
+                    <p>Publication Year</p>
+                </section>
+
+                <button type="button">View Details</button>
+            </article>
+
+            <article class="saved-book">
+                <img alt="Book cover">
+
+                <section class="book-info">
+                    <h3>Book Title 2</h3>
+                    <p>Author Name</p>
+                    <p>Publication Year</p>
+                </section>
+
+                <button type="button">View Details</button>
+            </article>
+        </section>
+
+        <section id="citations">
+            <h2>Citations</h2>
+            <p>Your book citations will appear here.</p>
+        </section>
+
+    </main>
 
     <footer>
         <p>Data from Open Library and Google Books</p>
-        &copy; 2026 CDK Innovators. All Rights Reserved 
+        <p>&copy; 2026 CDK Innovators. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
