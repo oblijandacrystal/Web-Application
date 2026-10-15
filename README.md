@@ -16,19 +16,19 @@ Book Researcher is a web-based application designed to assist students, research
 
 TECHNOLOGIES USED
 
-HTML
-CSS
-JavaScript
-openlibrary.org API
+• HTML 
+• CSS 
+• JavaScript 
+• openlibrary.org API
 
 PROJECT FILES
 
-index.html – Main homepage of the website.
-app.html – Main Book Researcher application page.
-style.css – Stylesheet for the website's design and layout.
-script.js – JavaScript file for application functionality.
-images/ – Folder containing images and other visual assets.
-README.txt - Information of the Project and Instructions.
+• index.html – Main homepage of the website. 
+• app.html – Main Book Researcher application page. 
+• style.css – Stylesheet for the website's design and layout. 
+• script.js – JavaScript file for application functionality. 
+• images/ – Folder containing images and other visual assets. 
+• README.txt - Information of the Project and Instructions. 
 
 API USED
 
@@ -56,15 +56,13 @@ IMPORTANT: An internet connection is required to access the deployed website and
 
 PROJECT FEATURES
 
-User-friendly interface
-Book search functionality
-Book discovery and exploration
-Book information display
-Search results presentation
-Responsive web design
-Team member section
-Organized and accessible layout
+• User-friendly interface 
+• Book search functionality 
+• Book discovery and exploration 
+• Book information display 
+• Search results presentation  
+• Responsive web design 
+• Team member section 
+• Organized and accessible layout 
 
 CDK INNOVATORS - Discover Books, Explore Knowledge.
-CDK INNOVATORS - Discover Books, Explore Knowledge.
-
