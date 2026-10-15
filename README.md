@@ -51,20 +51,20 @@ HOW TO RUN THE APP
 
 No special installation is required to access the deployed application.
 
-1.Open a web browser such as Google Chrome or Microsoft Edge.
+1. Open a web browser such as Google Chrome or Microsoft Edge.
 
-2.Visit the Book Researcher application using the link below:
+2. Visit the Book Researcher application using the link below:
 https://oblijandacrystal.github.io/Web-Application/app.html
 
-3.Wait for the application to load completely.
+3. Wait for the application to load completely.
 
-4.Explore the available features and interface.
+4. Explore the available features and interface.
 
-5.Enter a book title, author, or keyword in the search field, if available.
+5. Enter a book title, author, or keyword in the search field, if available.
 
-6.Click the search button to find matching books.
+6. Click the search button to find matching books.
 
-7.Browse the displayed results and view the available book information.
+7. Browse the displayed results and view the available book information.
 
 IMPORTANT: An internet connection is required to access the deployed website and any online book data services used by the application.
 
