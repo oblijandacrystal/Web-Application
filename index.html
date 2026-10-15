@@ -44,6 +44,12 @@
                 padding: 1.125rem 5%;
                 background-color: rgb(37, 34, 36);
                 color: rgb(232, 223, 200);
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
             }
 
             .logo {
@@ -73,11 +79,15 @@
             main {
                 width: 90%;
                 max-width: 3000px;
-                margin: 2.5rem auto;
+                margin: 0 auto;
+                padding-top: 8rem;
                 flex: 1;
             }
 
-           
+            main section {
+                display: block;
+                scroll-margin-top: 100px;
+            }
 
             section, article {
                 background-color: rgb(199, 174, 139);
@@ -90,10 +100,6 @@
             }
 
             main section{
-                display: none;
-            }
-
-            main section.visible {
                 display: block;
             }
 
@@ -152,6 +158,106 @@
                 font-size: 13px;
                 margin: 5px 0;
             }
+
+            .project-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 1.75rem 0 2rem;
+            }
+
+            .project-link a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.75rem;
+                padding: 0.9rem 1.75rem;
+                background-color: rgb(37, 34, 36);
+                color: rgb(232, 223, 200);
+                border: 2px solid rgb(112, 79, 65);
+                border-radius: 0.625rem;
+                font-size: 1.1rem;
+                font-weight: bold;
+                text-decoration: none;
+                box-shadow: 0 4px 8px rgba(53, 35, 23, 0.25);
+                transition: 0.25s ease;
+            }
+
+            .project-link a:hover {
+                background-color: rgb(92, 115, 35);
+                color: white;
+                transform: translateY(-3px);
+                box-shadow: 0 7px 14px rgba(53, 35, 23, 0.3);
+            }
+
+            .project-link .arrow {
+                font-size: 1.4rem;
+                transition: transform 0.25s ease;
+            }
+
+            .project-link a:hover .arrow {
+                transform: translateX(4px);
+            }
+
+            .results-heading {
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .project-features {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1rem;
+                padding: 0;
+                list-style: none;
+            }
+
+            .project-features li {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                min-width: 0;
+                padding: 1.25rem;
+
+                background-color: rgb(232, 223, 200);
+                border: 1px solid rgb(176, 141, 87);
+                border-radius: 0.625rem;
+
+                box-shadow: 0 3px 8px rgba(53, 35, 23, 0.15);
+            }
+
+            .project-features li b {
+                color: rgb(17, 47, 31);
+                font-size: 1.05rem;
+            }
+
+            .project-features li span {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .main-goal {    
+                margin: 1.5rem 0 0;
+                background-color: rgb(180, 197, 159);
+                border-color: rgb(112, 79, 65);
+            }
+
+            .main-goal h3 {
+                margin-top: 0;
+            }
+
+            @media (max-width: 768px) {
+              .project-features {
+                grid-template-columns: 1fr;
+            }
+
+            .project-link a {
+                max-width: 100%;
+                padding: 0.8rem 1.25rem;
+                font-size: 1rem;
+            }
+        }
 
             footer {
                 background-color:  rgb(79, 61, 66);
@@ -266,18 +372,41 @@
             <section id="home">
                 <h1 align="center">CDK INNOVATORS</h1>
 
-                <p align="center">We are the CDK Innovators. As a team, we aim to turn innovative ideas into solutions that make things simpler, faster, and more convenient for our users.</p>
+                <p align="center">We are the CDK Innovators. As a team, we aim to turn innovative ideas into<br> solutions that make things simpler, faster, and more convenient for our users.</p>
             </section>
 
             <section id="project">
-                <h2 align="center">Our Project: Book Researcher App</h2>
+                <h2 class="center">Our Project: Book Researcher App</h2>
 
-                <p>The <b>Book Researcher</b> is a search tool built for academics. A user types a <b>title</b>, <b>author</b>, or <b>keyword</b> and gets back a list of matching books. Each result shows:</p>
+            <p>
+                The <b>Book Researcher</b> is a search tool built for students and researchers.
+                A user types a <b>title</b>, <b>author</b>, or <b>keyword</b> and gets back a list of matching books. 
+            </p>
 
-                <ul>
-                    <li>a <b>cover image</b>, for quick visual recognition of edition</li>
-                    <li>the <b>author(s)</b>, which establishes who behind the work</li>
-                    <li>the <b>publication year</b>, which shows whether a book is recent or older</li>
+            <div class = "project-link">
+                <a href="https://oblijandacrystal.github.io/Web-Application/app.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                    <span>Explore Our App</span>
+                    <span class="arrow">&rarr;</span>
+                </a>
+            </div>
+
+            <h3 class="result-heading">Each result shows:</h3>
+                <ul class="project-features">
+                    <li>
+                        <b>Cover image</b>
+                            <span>For quick visual recognition of edition.
+                            </span>
+                    </li>
+                    <li>
+                        <b>author(s)</b>
+                            <span>To identify who wrote the work.</span>
+                        </li>
+                    <li>
+                        <b>publication year</b>
+                            <span>To show whether a book is recent or older</span>
+                    </li>
                 </ul>
 
                 <article>
@@ -322,38 +451,30 @@
         
 <script>
     const navLinks = document.querySelectorAll('.nav-links a');
-    const logo = document.querySelector(".logo");
-    const sections = document.querySelectorAll("main section");
 
-    function showSection(id) {
-        const exists = document.getElementById(id);
-        if (!exists) id = "home";
-
-        sections.forEach((section) => {
-            section.classList.toggle("visible", section.id === id);
-            });
+    function updateActiveLink() {
+        const currentSection = window.location.hash || "#home";
 
         navLinks.forEach((link) => {
-            link.classList.toggle("active", link.getAttribute("href") === "#" + id);
-            });
-
-    history.replaceState(null, "", "#" + id);
-    window.scrollTo({ top: 0, behavior: "smooth"});
+            link.classList.toggle(
+                'active',
+                link.getAttribute('href') === currentSection
+            );
+        });
     }
 
     navLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-            showSection(link.getAttribute("href").slice(1));
+        link.addEventListener("click", () => {
+            const target = document.querySelector(link.getAttribute('href'));
+
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
-
-    logo.addEventListener("click", (event) => {
-        event.preventDefault();
-        showSection("home");
-    });
-
-    showSection(location.hash.slice(1) || "home");
 
         </script>
     </body>
