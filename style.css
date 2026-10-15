@@ -10,6 +10,7 @@ html {
 body {
     display: grid;
     grid-template-columns: 15rem minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
     "header header"
     "sidebar content"
@@ -44,7 +45,8 @@ header {
     grid-area: header;
     display: flex;
     align-items: center;
-    padding: 1.25rem 2rem;
+    padding: 1.5rem 2rem;
+    min-height: 7rem;
     background-color: rgb(37, 34, 36);
     border-bottom: 0.15rem solid rgb(185, 151, 86);
 }
@@ -102,9 +104,19 @@ main {
     padding: 2rem;
 }
 
-section {
+main > section {
     margin-bottom: 3rem;
     scroll-margin-top: 1rem;
+}
+
+.view {
+    display: none;
+    margin-bottom: 3rem;
+    scroll-margin-top: 1rem;
+}
+
+.view.active {
+    display: block;
 }
 
 h1 {
@@ -182,6 +194,77 @@ h2 {
 
 #search-results {
     margin-top: 2rem;
+}
+
+#recent-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background-color: rgb(239, 235, 220);
+    border: 1px solid rgb(202, 192, 166);
+    border-radius: 0.6rem;
+}
+
+#recent-controls label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: auto;
+    color: rgb(36, 63, 48);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#select-all-recent {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: rgb(36, 63, 48);
+    cursor: pointer;
+}
+
+#recent-controls button {
+    padding: 0.65rem 1rem;
+    background-color: rgb(36, 63, 48);
+    color: rgb(250, 246, 235);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid rgb(36, 63, 48);
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#recent-controls button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 30rem) {
+    #recent-controls {
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+
+    #recent-controls label {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #recent-controls button {
+        flex: 1;
+        padding: 0.65rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+#recent-controls button:hover {
+    background-color: rgb(92, 115, 35);
+    border-color: rgb(92, 115, 35);
+    transform: translateY(-2px);
 }
 
 .recent-books {
@@ -293,7 +376,9 @@ h2 {
 
 footer {
     grid-area: footer;
-    padding: 1.25rem;
+    align-self: end;
+    width: 100;
+    padding: 1rem 1.25rem;
     background-color: rgb(37, 34, 36);
     text-align: center;
 }
@@ -302,12 +387,18 @@ footer p {
     margin-bottom: 0.3rem;
     color: rgb(232, 223, 200);
     font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
 }
 
 @media (max-width: 48rem) {
 
     body {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto minmax(0, 1fr) auto;
         grid-template-areas:
         "header"
         "sidebar"
@@ -316,7 +407,8 @@ footer p {
     }
 
     header {
-        padding: 1rem;
+        padding: 1.25rem 1rem;
+        min-height: 6rem;
     }
 
     aside {
@@ -380,4 +472,125 @@ footer p {
         width: 5rem;
         height: 7rem;
     }
+}
+
+#book-details {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#book-details > img {
+    width: 12rem;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: rgb(225, 219, 199);
+}
+
+.details-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.book-actions,
+.details-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}
+
+.button,
+.link-button {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: 0.1rem solid rgb(36, 63, 48);
+    border-radius: 0.35rem;
+    cursor: pointer;
+}
+
+.button {
+    background-color: rgb(36, 63, 48);
+    color: rgb(250, 246, 235);
+}
+
+.button:hover {
+    background-color: rgb(92, 115, 35);
+}
+
+.link-button {
+    background: transparent;
+    color: rgb(36, 63, 48);
+}
+
+.link-button:hover {
+    background-color: rgb(239, 235, 220);
+}
+
+.citation-item {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    padding: 1..25rem;
+    background-color: rgb(250, 246, 235);
+    border: 0.1rem solid rgb(202, 192, 166);
+    border-radius: 0.6rem;
+}
+
+.citation-book {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.citation-book img {
+    width: 6rem;
+    height: 8rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    background-color: rgb(225, 219, 199);
+}
+
+.citation-book h3 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    font-size: 1.1rem;
+}
+
+.citation-details {
+    min-width: 0;
+    padding-left: 1.25rem;
+    border-left: 0.1rem solid rgb(202, 192, 166);
+}
+
+.citation-text {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 48rem) {
+    .citation-item {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .citation-details {
+        padding-left: 0;
+        padding-top: 1rem;
+        border-left: none;
+        border-top: 0.1rem solid rgb(202, 192, 166);
+    }
+}
+
+#recent-controls[hidden],
+#see-more[hidden] {
+    display: none !important;
 }

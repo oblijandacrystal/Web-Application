@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src = "script.js" defer></script>
     <title>Book Researcher</title>
 </head>
 <body>
@@ -12,8 +12,10 @@
     <header id="home">
         <a href="#home" class="logo">
             BOOK RESEARCHER
-            <small>Your Academic Library</small>
+            <small>Your Library</small>
         </a>
+
+        <a href=""></a>
     </header>
 
     <aside>
@@ -27,7 +29,7 @@
 
     <main>
 
-        <section id="search">
+        <section id="search" class="view">
             <h1>Find books for your research</h1>
             <p>Search by title, author, or keyword.</p>
 
@@ -56,68 +58,66 @@
             </section>
         </section>
 
-        <section id="recently-viewed">
-            <h2>Recently Viewed</h2>
-            <p>Books you have opened recently.</p>
+        <section id="book" class="view">
+            <h2>Book Details</h2>
 
-            <section class="recent-books">
-                <article class="book-card">
-                    <img alt="Book cover">
-                    <h3>Book Title 1</h3>
-                </article>
-
-                <article class="book-card">
-                    <img alt="Book cover">
-                    <h3>Book Title 2</h3>
-                </article>
-
-                <article class="book-card">
-                    <img alt="Book cover">
-                    <h3>Book Title 3</h3>
-                </article>
-            </section>
-
-            <a href="#recently-viewed">See More...</a>
+            <div id="book-details">
+                <p>Select a book to view its details.</p>
+            </div>
         </section>
 
-        <section id="readinglist">
+        <section id="recently-viewed" class="view">
+            <h2>Recently Viewed</h2>
+            <p>Books you have opened recently</p>
+
+            <div id="recent-controls">
+                <label>
+                    <input type="checkbox" id="select-all-recent">
+                    Select All
+                </label>
+
+                <button type="button" data-action="remove-selected">
+                    Remove Selected
+                </button>
+
+                <button type="button" data-action="clear-recent">
+                    Clear All
+                </button>
+            </div>
+
+        <div id="recent-list" class="recent-books">
+            <p>Books you view recently will appear here.</p>
+        </div>
+
+            <button type="button" id="see-more">See More...</button>
+        </section>
+
+        <section id="readinglist" class="view">
             <h2>Reading List</h2>
             <p>Your saved books for future reference.</p>
 
-            <article class="saved-book">
-                <img alt="Book cover">
-
-                <section class="book-info">
-                    <h3>Book Title 1</h3>
-                    <p>Author Name</p>
-                    <p>Publication Year</p>
-                </section>
-
-                <button type="button">View Details</button>
-            </article>
-
-            <article class="saved-book">
-                <img alt="Book cover">
-
-                <section class="book-info">
-                    <h3>Book Title 2</h3>
-                    <p>Author Name</p>
-                    <p>Publication Year</p>
-                </section>
-
-                <button type="button">View Details</button>
-            </article>
+            <div id="reading-list">
+            </div>
         </section>
 
-        <section id="citations">
+        <section id="citations" class="view">
             <h2>Citations</h2>
+
+            <label for="citation-style">Citation style:</label>
+            <select id="citation-style">
+                <option value="apa">APA</option>
+                <option value="mla">MLA</option>
+            </select>
+
+            <div id="citation-list">
             <p>Your book citations will appear here.</p>
+            </div>
         </section>
 
     </main>
 
     <footer>
-        <p>Data from Open Library and Google Books</p>
+        <p>Data from Open Library</p>
         <p>&copy; 2026 CDK Innovators. All Rights Reserved.</p>
     </footer>
 
